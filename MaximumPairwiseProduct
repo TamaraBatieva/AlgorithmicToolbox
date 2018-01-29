@@ -1,0 +1,24 @@
+function maxPairwiseProduct(numbers) {
+    const input = numbers.split(' ');
+    let length = input.length;
+    let firstMax = 0;
+    let firstIndex = 0;
+
+    for (let i = 0; i < length; i++) {
+        if (input[i] > firstMax) {
+            firstIndex = i;
+            firstMax = input[i]
+        }
+    }
+    let secondMax = 0;
+    let secondIndex = firstIndex === 0 ? 1 : 0;
+
+    for (let i = 0; i < length; i++) {
+        if (i !== firstIndex && input[i] > secondMax) {
+            secondIndex = i;
+            secondMax = input[i]
+        }
+    }
+
+    return firstMax * secondMax;
+}
