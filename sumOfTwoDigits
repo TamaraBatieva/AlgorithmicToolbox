@@ -1,0 +1,4 @@
+function sumOfTwo(numbers) {
+    const input = numbers.split(' ');
+    return input[0] + input[1];
+}
